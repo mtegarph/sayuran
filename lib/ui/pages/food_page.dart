@@ -54,9 +54,53 @@ class _FoodPageState extends State<FoodPage> {
             ),
 
             /// LIST FOOD
+            SizedBox(
+              height: 15.0,
+            ),
+            CarouselSlider(
+              options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.8,
+                  height: 180.0,
+                  aspectRatio: 18 / 9,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(milliseconds: 3000)),
+              items: [
+                Container(
+                  margin: EdgeInsets.all(5.0),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://i.pinimg.com/564x/94/17/82/941782f60e16a9d7f9b4cea4ae7025e0.jpg"),
+                          fit: BoxFit.cover)),
+                  //         child: Column(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   crossAxisAlignment: CrossAxisAlignment.center,
+                  //   children: [
+                  //     Text(
+                  //       'VeggieShop',
+                  //       style: blackFontStyle1.copyWith(color: Colors.white,fontSize: 18.0),
+                  //     ),
+                  //     Padding(
+                  //       padding: const EdgeInsets.all(15.0),
+                  //       child: Text(
+                  //         'Lets see some new fresh vegetables',
+                  //         style: greyFontStyle.copyWith(
+                  //             fontWeight: FontWeight.w300, color: Colors.white,fontSize: 15.0),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                  
+                )
+              ],
+            ),
             Container(
               alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(top: 14,left: 25),
+              margin: EdgeInsets.only(top: 14, left: 25),
               child: Text(
                 'Our reccomendations..',
                 style: blackFontStyle1,
@@ -69,7 +113,7 @@ class _FoodPageState extends State<FoodPage> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   Row(
-                    
+
                       // logika untuk menerapkan padding di awal awal
                       children: mockFood
                           .map((e) => Padding(
@@ -92,17 +136,19 @@ class _FoodPageState extends State<FoodPage> {
               child: Column(
                 children: [
                   Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(top: 14,left: 25,bottom: 15),
-              child: Text(
-                'Or try something new..',
-                style: blackFontStyle1,
-              ),
-            ),
+                    alignment: Alignment.topLeft,
+                    margin: EdgeInsets.only(top: 14, left: 25, bottom: 15),
+                    child: Text(
+                      'Or try something new..',
+                      style: blackFontStyle1,
+                    ),
+                  ),
                   Builder(builder: (_) {
                     List<Food> food = (selectedIndex == 0)
                         ? mockFood
-                        : (selectedIndex == 1) ? [] : [];
+                        : (selectedIndex == 1)
+                            ? []
+                            : [];
                     return Column(
                         children: food
                             .map((e) => Padding(
