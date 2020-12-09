@@ -43,7 +43,7 @@ class _FoodPageState extends State<FoodPage> {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(100),
                         image: DecorationImage(
                             image: NetworkImage(
                                 'https://i.pinimg.com/originals/0f/43/93/0f43933135d0d61b3d6e8fcf68740369.jpg'),
@@ -54,6 +54,38 @@ class _FoodPageState extends State<FoodPage> {
             ),
 
             /// LIST FOOD
+            GestureDetector(
+              onTap: () {
+                print("Tap");
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+                width: double.infinity,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: "e3e3e3".toColor(),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.search),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Cari Produk Disini",
+                        style:
+                            greyFontStyle.copyWith(fontWeight: FontWeight.w300),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             SizedBox(
               height: 15.0,
             ),
@@ -62,8 +94,8 @@ class _FoodPageState extends State<FoodPage> {
                   autoPlay: true,
                   enlargeCenterPage: true,
                   viewportFraction: 0.8,
-                  height: 180.0,
-                  aspectRatio: 18 / 9,
+                  height: 200.0,
+                  aspectRatio: 16 / 9,
                   autoPlayCurve: Curves.fastOutSlowIn,
                   enableInfiniteScroll: true,
                   autoPlayAnimationDuration: Duration(milliseconds: 3000)),
@@ -94,7 +126,6 @@ class _FoodPageState extends State<FoodPage> {
                   //     ),
                   //   ],
                   // ),
-                  
                 )
               ],
             ),

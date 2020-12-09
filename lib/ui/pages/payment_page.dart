@@ -9,8 +9,10 @@ class PaymentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return GeneralPage(
       title: 'Payment',
-      subtitle: 'You Deserve Better Meal',
-      onBackButtonPressed: () {},
+      subtitle: 'Your Detail Payment',
+      onBackButtonPressed: () {
+        Get.back();
+      },
       backColor: 'FAFAFC'.toColor(),
       child: Column(
         children: [

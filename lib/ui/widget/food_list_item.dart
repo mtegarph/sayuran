@@ -61,7 +61,7 @@ class FoodListItem extends StatelessWidget {
             child: Text(
               '>',
               style: greyFontStyle.copyWith(
-                  fontWeight: FontWeight.w500, fontSize: 20),
+                  fontWeight: FontWeight.w500, fontSize: 20,color: Colors.white)
             ),
           ),
         )

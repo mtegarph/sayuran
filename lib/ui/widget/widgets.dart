@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:foodmarket/models/models.dart';
 import 'package:foodmarket/shared/shared.dart';
